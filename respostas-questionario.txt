@@ -1,0 +1,156 @@
+RESPOSTAS DO QUESTIONÁRIO - DESAFIO NAVEGAÇÃO, TABELA E FORMULÁRIO V2
+======================================================================
+
+ESTRUTURA BASE (6 itens)
+-------------------------
+1. Arquivo salvo como index.html
+   - Nome exato, sem variações como "index.HTML" ou "atividade.html".
+
+2. Primeira linha: <!DOCTYPE html>
+   - Indica ao navegador que o documento segue o padrão HTML5.
+
+3. Tag <html lang="pt-BR">
+   - O atributo lang define o idioma. "pt-BR" é o correto para português do Brasil.
+
+4. <meta charset="UTF-8"> dentro do <head>
+   - Sem essa meta, caracteres como "ã" e "ç" podem aparecer trocados.
+
+5. <title>Atividades escolares</title>
+   - Texto exato com A maiúsculo e sem acento em "Atividades" (a palavra não tem acento).
+
+6. <h1>Atividades escolares</h1> no início do body
+   - Um único h1 na página, como primeiro conteúdo visível.
+
+NAVEGAÇÃO - <nav> (6 itens)
+----------------------------
+7. Tag <nav> logo após o <h1>
+   - A área de navegação vem antes de qualquer outro conteúdo.
+
+8. Três tags <a> dentro do <nav>
+   - Cada link em uma tag <a> separada.
+
+9. Link "Etapas" com href="#etapas"
+   - O valor "#etapas" aponta para o id que será criado no h2 correspondente.
+
+10. Link "Atividades" com href="#atividades"
+    - Igual ao anterior, apontando para o id "atividades".
+
+11. Link "Inscrição" com href="#inscricao"
+    - Atenção: "inscricao" sem acento no href, para corresponder ao id.
+
+12. Separador | entre os links
+    - O caractere pipe (barra vertical) separa visualmente os links.
+
+LISTA E PARÁGRAFOS - SEÇÃO "COMO PARTICIPAR" (6 itens)
+-------------------------------------------------------
+13. <h2 id="etapas">Como participar</h2>
+    - Texto exato "Como participar" e o id no próprio h2.
+
+14. Lista com <ol> contendo três <li>
+    - Lista ordenada (numerada), não <ul>.
+
+15. Primeiro item: "Escolha uma atividade."
+    - Com ponto final, conforme enunciado.
+
+16. Segundo item: "Preencha o formulário."
+    - Com acento em "formulário".
+
+17. Terceiro item: "Envie sua inscrição."
+    - Com acento em "inscrição".
+
+18. Cinco <p> após a lista
+    - Textos exatos na ordem:
+      a) Leia as orientações antes de continuar.
+      b) As atividades são destinadas aos estudantes da escola.
+      c) Consulte os horários e escolha a opção desejada.
+      d) Organize seus dados antes de preencher a inscrição.
+      e) Confira todas as informações antes de enviar.
+
+TABELA E PARÁGRAFOS - SEÇÃO "ATIVIDADES DISPONÍVEIS" (5 itens)
+----------------------------------------------------------------
+19. <h2 id="atividades">Atividades disponíveis</h2>
+    - Id "atividades" no h2, texto com acento em "disponíveis".
+
+20. <table border="1">
+    - O atributo border é obrigatório nesta atividade (excepcionalmente, para visualizar a grade sem CSS).
+
+21. Linha de cabeçalho com dois <th>
+    - Primeira <tr> contém th Atividade e th Turno.
+
+22. Duas linhas de dados com dois <td> cada
+    - Desenvolvimento Web / Manhã e Robótica / Tarde.
+
+23. Cinco <p> após a tabela
+    - Textos exatos na ordem:
+      a) Desenvolvimento Web permite conhecer a criação de páginas.
+      b) Robótica explora a construção e a programação de projetos.
+      c) Escolha a atividade de acordo com seu interesse.
+      d) Depois, vá até a seção de inscrição.
+      e) Preencha os campos com atenção.
+
+FORMULÁRIO - SEÇÃO "INSCRIÇÃO" (8 itens)
+-----------------------------------------
+24. <h2 id="inscricao">Inscrição</h2>
+    - Id "inscricao" sem acento, texto com acento.
+
+25. <form action="https://httpbin.org/post" method="post">
+    - Action e method exatos. Sem isso, o formulário não envia para lugar nenhum.
+
+26. Label "Nome:" com for="nome"
+    - O for deve ser exatamente "nome" para casar com o input.
+
+27. Input com type="text" id="nome" name="nome" required
+    - Os atributos estão todos nessa ordem recomendada. O required impede envio vazio.
+
+28. Label "Atividade:" com for="atividade"
+    - O for deve ser "atividade" para casar com o select.
+
+29. <select id="atividade" name="atividade"> com duas <option>
+    - Opções: Desenvolvimento Web e Robótica.
+
+30. Dois pares de <br><br>
+    - Um após o input Nome, outro após o select Atividade.
+
+31. <button type="submit">Enviar inscrição</button>
+    - Texto exato do botão e type="submit" para disparar o envio.
+
+TESTES OBRIGATÓRIOS (5 testes)
+-------------------------------
+TESTE 1 - Navegação Etapas:
+   - Clique em "Etapas" na barra de navegação. A página deve rolar até o título "Como participar". Observe que a URL ganha #etapas no final.
+   - Se falhar: O id="etapas" está no <h2>?
+
+TESTE 2 - Navegação Atividades:
+   - Clique em "Atividades". A página deve rolar até o título "Atividades disponíveis".
+   - Se falhar: O id="atividades" está no <h2>?
+
+TESTE 3 - Navegação Inscrição:
+   - Clique em "Inscrição". A página deve rolar até o título "Inscrição" e mostrar o formulário.
+   - Se falhar: O id="inscricao" está no <h2> e o href também está sem acento?
+
+TESTE 4 - Formulário:
+   - Preencha o nome, escolha uma atividade no <select> e clique em "Enviar inscrição". Sem internet, o navegador mostrará um erro de destino — isso é esperado e prova que o formulário tentou enviar.
+   - Se falhar: O action e method estão corretos no <form>?
+
+TESTE 5 - Resposta JSON (com internet):
+   - Se houver conexão, você verá uma página em branco com um texto no formato JSON. Nele aparecerá "form": {"nome": "...", "atividade": "..."}. Isso prova que os dados chegaram ao destino e foram recebidos pelo serviço.
+   - Observação: Use sempre dados fictícios (ex: "Ana", "teste@exemplo.com").
+
+REGRAS FUNDAMENTAIS CUMPRIDAS
+------------------------------
+✅ Utilizou somente HTML
+✅ Não utilizou CSS em nenhuma forma (nem style, nem arquivo externo)
+✅ Não utilizou JavaScript
+✅ Não utilizou a tag <section>
+✅ Arquivo salvo com o nome exato index.html
+
+CONCEITOS APRENDIDOS
+---------------------
+1. Âncoras internas: href="#id" faz a página rolar até o elemento com aquele id
+2. Lista ordenada <ol> gera numeração automática (1, 2, 3...)
+3. Tabela sem CSS: <table border="1"> desenha grade visível
+4. Formulário POST: action define destino, method="post" envia dados no corpo da requisição
+5. Acessibilidade: label for="id" + input id="id" permite clicar no label para focar o campo
+6. Atributo required: impede envio do formulário se o campo estiver vazio
+7. <br><br>: cria espaço vertical entre elementos sem CSS
+8. httpbin.org: serviço de testes que ecoa os dados enviados em JSON

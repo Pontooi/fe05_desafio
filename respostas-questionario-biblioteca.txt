@@ -1,0 +1,182 @@
+RESPOSTAS DO QUESTIONÁRIO - BIBLIOTECA ESCOLAR (HTML PURO)
+===========================================================
+
+ESTRUTURA BASE (6 itens)
+-------------------------
+1. Arquivo salvo como index.html
+   - Nome exato, sem variações.
+
+2. Primeira linha: <!DOCTYPE html>
+   - Padrão HTML5.
+
+3. Tag <html lang="pt-BR">
+   - Idioma pt-BR.
+
+4. <meta charset="UTF-8"> dentro do <head>
+   - Garante acentos corretos.
+
+5. <title>Biblioteca escolar</title>
+   - Texto exato.
+
+6. <h1>Biblioteca escolar</h1> no início do body
+   - Um único h1.
+
+NAVEGAÇÃO - <nav> (6 itens)
+----------------------------
+7. Tag <nav> logo após o <h1>
+   - Antes de qualquer outro conteúdo.
+
+8. Três tags <a> dentro do <nav>
+   - 3 links separados.
+
+9. Link "Como solicitar" com href="#passos"
+   - Aponta para o id "passos".
+
+10. Link "Catálogo" com href="#catalogo"
+    - Aponta para o id "catalogo".
+
+11. Link "Solicitação" com href="#solicitacao"
+    - Sem acento no href.
+
+12. Separador | entre os links
+    - Caractere pipe.
+
+LISTA E PARÁGRAFOS - "COMO SOLICITAR UM LIVRO" (6 itens)
+---------------------------------------------------------
+13. <h2 id="passos">Como solicitar um livro</h2>
+    - Texto exato.
+
+14. Lista com <ol> contendo três <li>
+    - Lista ordenada.
+
+15. Primeiro item: "Consulte o catálogo de livros."
+    - Com acento em "catálogo".
+
+16. Segundo item: "Escolha o livro desejado."
+    - Com ponto final.
+
+17. Terceiro item: "Preencha o formulário de solicitação."
+    - Com acento em "formulário".
+
+18. Cinco <p> após a lista
+    - Textos exatos na ordem:
+      a) A biblioteca atende aos estudantes da escola.
+      b) Consulte as informações antes de escolher um livro.
+      c) Verifique o título e o autor da obra.
+      d) Informe seus dados corretamente.
+      e) Aguarde a confirmação da solicitação.
+
+TABELA E PARÁGRAFOS - "CATÁLOGO DE LIVROS" (7 itens)
+-----------------------------------------------------
+19. <h2 id="catalogo">Catálogo de livros</h2>
+    - Id e texto corretos.
+
+20. <table border="1">
+    - Atributo border obrigatório (intencional, para visualizar grade sem CSS).
+
+21. Linha de cabeçalho com três <th> dentro de <tr>
+    - th Livro, th Autor, th Categoria.
+
+22. Primeira linha de dados: "O Pequeno Príncipe" | "Antoine de Saint-Exupéry" | "Ficção"
+    - Cada <td> em sua própria <tr>.
+
+23. Segunda linha de dados: "Dom Casmurro" | "Machado de Assis" | "Romance"
+    - Cada <td> em sua própria <tr>.
+
+24. Terceira linha de dados: "A Hora da Estrela" | "Clarice Lispector" | "Literatura brasileira"
+    - Cada <td> em sua própria <tr>.
+
+25. Cinco <p> após a tabela
+    - Textos exatos na ordem:
+      a) O catálogo apresenta exemplos de obras disponíveis para consulta.
+      b) A categoria ajuda a identificar o tipo de livro.
+      c) Escolha uma obra de seu interesse.
+      d) Confira o título antes de preencher a solicitação.
+      e) A próxima etapa é informar seus dados.
+
+FORMULÁRIO - "SOLICITAÇÃO DE EMPRÉSTIMO" (11 itens)
+----------------------------------------------------
+26. <h2 id="solicitacao">Solicitação de empréstimo</h2>
+    - Id "solicitacao" sem acento, texto com acento.
+
+27. <form action="https://httpbin.org/post" method="post">
+    - Action e method exatos.
+
+28. Label "Nome do estudante:" com for="estudante"
+    - Casa com input id="estudante".
+
+29. Input: type="text" id="estudante" name="estudante" required
+    - Campo de texto obrigatório.
+
+30. Label "Livro escolhido:" com for="livro"
+    - Casa com select id="livro".
+
+31. Select id="livro" name="livro" com três <option> (sem value)
+    - Opções: "O Pequeno Príncipe", "Dom Casmurro", "A Hora da Estrela".
+    - Sem value: o texto visível é enviado ao servidor.
+
+32. Label "Prazo desejado:" com for="prazo"
+    - Casa com select id="prazo".
+
+33. Select id="prazo" name="prazo" com duas <option> (sem value)
+    - Opções: "7 dias", "14 dias".
+
+34. Três pares de <br><br>
+    - Um após o input Nome, um após select Livro, um após select Prazo.
+
+35. <button type="submit">Enviar solicitação</button>
+    - Texto exato e type="submit".
+
+36. Não usou <section>, CSS ou JavaScript
+    - Requisito fundamental cumprido.
+
+TESTES OBRIGATÓRIOS (6 testes)
+-------------------------------
+TESTE 1 - Navegação "Como solicitar":
+   - Clique em "Como solicitar". Rola até "Como solicitar um livro". URL termina com #passos.
+   - Se falhar: O id="passos" está no <h2>?
+
+TESTE 2 - Navegação "Catálogo":
+   - Clique em "Catálogo". Rola até "Catálogo de livros". URL com #catalogo.
+   - Se falhar: O id="catalogo" está no <h2>?
+
+TESTE 3 - Navegação "Solicitação":
+   - Clique em "Solicitação". Rola até o formulário. URL com #solicitacao.
+   - Se falhar: O id="solicitacao" está no <h2> e o href sem acento?
+
+TESTE 4 - Alinhamento da tabela:
+   - Verifique se as 4 linhas (1 cabeçalho + 3 dados) têm o mesmo alinhamento.
+   - Se falhar: Cada linha tem exatamente uma <tr> e 3 células?
+
+TESTE 5 - Formulário:
+   - Preencha nome, escolha livro e prazo, clique "Enviar solicitação".
+   - Sem internet: erro de destino (prova que tentou enviar).
+   - Se falhar: action e method corretos no <form>?
+
+TESTE 6 - Resposta JSON (com internet):
+   - Verá JSON com "form": {"estudante": "...", "livro": "...", "prazo": "..."}.
+   - O valor de "livro" é o TEXTO VISÍVEL da opção (ex: "Dom Casmurro"), não um value.
+   - Isso prova que omitir value envia o texto — comportamento estudado na etapa 5.
+
+CONCEITOS IMPORTANTES APRENDIDOS
+---------------------------------
+1. Âncoras internas: href="#id" rola até elemento com id correspondente
+2. <ol> gera numeração automática (1, 2, 3...)
+3. Tabela sem CSS: <table border="1"> desenha grade
+4. <tr> é OBRIGATÓRIO para cada linha — esquecer uma <tr> quebra o alinhamento
+5. 3 colunas = 3 células (<th> ou <td>) por <tr>
+6. Formulário POST: action=destino, method="post" envia no corpo
+7. label for="id" + input/select id="id" = acessibilidade (clique no label foca o campo)
+8. required impede envio vazio
+9. <select> + <option> sem value: envia o texto visível
+10. <select> + <option value="chave">: envia o valor do atributo (útil para chaves técnicas)
+11. <br><br> cria espaço vertical sem CSS
+12. httpbin.org ecoa dados em JSON para teste
+
+DIFERENÇAS CHAVE EM RELAÇÃO AO DESAFIO ANTERIOR
+------------------------------------------------
+- Tabela tem 3 colunas (antes 2)
+- Formulário tem 3 campos (antes 2): input + 2 selects
+- Sem atributo value nas options (envia texto visível)
+- IDs/hrefs diferentes: passos, catalogo, solicitacao (vs etapas, atividades, inscricao)
+- Textos específicos para contexto de biblioteca

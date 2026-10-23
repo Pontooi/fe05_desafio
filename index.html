@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>FE05 - Sumário</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #f5f7fa;
+      color: #1e293b;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container { max-width: 720px; margin: 0 auto; }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .subtitle { text-align: center; color: #64748b; margin-bottom: 32px; }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.06);
+      border: 1px solid #e2e8f0;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #0c4a6e;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e0f2fe;
+    }
+    .card-title::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #0284c7; }
+    .links { display: flex; flex-direction: column; gap: 10px; }
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      color: #334155;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: .95rem;
+      transition: all .2s;
+    }
+    .link-btn:hover {
+      background: #e0f2fe;
+      border-color: #0284c7;
+      color: #0c4a6e;
+      transform: translateX(4px);
+    }
+    .link-btn::before { content: '📄'; font-size: 1.1rem; }
+    .link-btn.answers::before { content: '📝'; }
+    .link-btn.answers:hover { background: #fef3c7; border-color: #d97706; color: #78350f; }
+    .footer { text-align: center; color: #94a3b8; font-size: .8rem; margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FE05 - Atividades Práticas</h1>
+    <p class="subtitle">Navegação, Tabelas e Formulários — HTML Puro</p>
+
+    <div class="card">
+      <div class="card-title">Desafio: Navegação + Tabela + Formulário v2</div>
+      <div class="links">
+        <a href="desafio_navegacao_tabela_formulario_v2.html" class="link-btn">Atividade: Atividades Escolares</a>
+        <a href="respostas-questionario.txt" class="link-btn answers">Respostas do Questionário</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Biblioteca Escolar</div>
+      <div class="links">
+        <a href="biblioteca_escolar.html" class="link-btn">Atividade: Biblioteca Escolar</a>
+        <a href="respostas-questionario-biblioteca.txt" class="link-btn answers">Respostas do Questionário</a>
+      </div>
+    </div>
+
+    <p class="footer">FE05 - Front-End &bull; 2026</p>
+  </div>
+</body>
+</html>
